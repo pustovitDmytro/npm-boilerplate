@@ -1,7 +1,8 @@
 # npm-boilerplate
 **npm-boilerplate** boilerplate for creating npm packages.
 
-[![Version][badge-vers]][npm]
+[![Version][badge-vers]][npm][![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FpustovitDmytro%2Fnpm-boilerplate.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FpustovitDmytro%2Fnpm-boilerplate?ref=badge_shield)
+
 [![CodeFactor][codefactor-badge]]([codefactor-url])
 [![Dependencies][badge-deps]][npm]
 [![Vulnerabilities][badge-vuln]](https://snyk.io/)
@@ -70,3 +71,6 @@ The message summary should be a one-sentence description of the change. The issu
 
 [codefactor-badge]: https://www.codefactor.io/repository/github/pustovitdmytro/npm-boilerplate/badge
 [codefactor-url]: https://www.codefactor.io/repository/github/pustovitdmytro/npm-boilerplate
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FpustovitDmytro%2Fnpm-boilerplate.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FpustovitDmytro%2Fnpm-boilerplate?ref=badge_large)
