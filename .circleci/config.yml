@@ -13,7 +13,7 @@ parameters:
 
 aliases:
   - &danger-pr
-    name: Upload to coveralls
+    name: Run danger
     command: npx danger ci -d .dangerfile.js
   - &coveralls
     name: Upload to coveralls
@@ -52,6 +52,7 @@ jobs:
       DANGER_GITHUB_API_TOKEN: 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
     steps:
       - checkout
+      - run: echo "DANGER_GITHUB_API_TOKEN=$DANGER_GITHUB_API_TOKEN"
       - run: *install
       - run: *danger-pr
       
@@ -99,24 +100,26 @@ jobs:
 
 workflows:
   version: 2
-  main:
-    jobs:
-      - install
-      - tests:
-          requires:
-            - install
-      - test-package:
-          requires:
-            - install
-      - deploy:
-          requires:
-            - tests
-            - test-package
-          filters:
-            branches:
-                only: master
+  # main:
+  #   jobs:
+  #     - install
+  #     - tests:
+  #         requires:
+  #           - install
+  #     - test-package:
+  #         requires:
+  #           - install
+  #     - deploy:
+  #         requires:
+  #           - tests
+  #           - test-package
+  #         filters:
+  #           branches:
+  #               only: master
   pr:
-    when: << pipeline.git.branch >>
+    # filters:
+    #     branches:
+    #       only: /pull\/[0-9]+/
     jobs:
       - danger-pr
   env-tests:
