@@ -49,10 +49,9 @@ jobs:
   danger-pr:
     <<: *defaults
     environment:
-      DANGER_GITHUB_API_TOKEN: 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
+      DANGER_GITHUB_API_TOKEN: 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
     steps:
       - checkout
-      - run: echo "DANGER_GITHUB_API_TOKEN=$DANGER_GITHUB_API_TOKEN"
       - run: *install
       - run: *danger-pr
       
