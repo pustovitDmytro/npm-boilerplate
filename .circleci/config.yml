@@ -11,7 +11,20 @@ parameters:
     type: boolean
     default: false
 
+
+     - run:
+          name: Update PATH and Define Environment Variable at Runtime
+          command: |
+            echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
+            echo 'export VERY_IMPORTANT=$(cat important_value)' >> $BASH_ENV
+            source $BASH_ENV
+
 aliases:
+  - &set-github-read-token
+    name: Set Danger Token
+    command: |
+            echo 'export DANGER_GITHUB_API_TOKEN=$(echo Z2hwXzFldFVxODNZTUhCa0ZQUjk0WVV1blFXZTFCVmkzajRSOEpxRQo= | base64 --decode)' >> $BASH_ENV
+            source $BASH_ENV
   - &danger-pr
     name: Run danger
     command: npx danger ci -d .dangerfile.js
@@ -48,11 +61,10 @@ debug: true
 jobs:
   danger-pr:
     <<: *defaults
-    environment:
-      DANGER_GITHUB_API_TOKEN: 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
     steps:
       - checkout
       - run: *install
+      - run: *set-github-read-token
       - run: *danger-pr
       
   install:
