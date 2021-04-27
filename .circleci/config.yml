@@ -11,14 +11,6 @@ parameters:
     type: boolean
     default: false
 
-
-     - run:
-          name: Update PATH and Define Environment Variable at Runtime
-          command: |
-            echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
-            echo 'export VERY_IMPORTANT=$(cat important_value)' >> $BASH_ENV
-            source $BASH_ENV
-
 aliases:
   - &set-github-read-token
     name: Set Danger Token
