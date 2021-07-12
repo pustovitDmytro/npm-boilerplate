@@ -15,7 +15,7 @@ Please, go through these steps before you submit a PR:
 
 **PLEASE REMOVE THESE NOTES BEFORE SUBMITTING**
 
-
+1
 **Fixes typo** [ word / sentence / filename ]
 
 Describe your changes:
