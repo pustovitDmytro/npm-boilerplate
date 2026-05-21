@@ -76,6 +76,6 @@
     "nyc": "^15.1.0",
     "semantic-release": "^19.0.5",
     "semantic-release-telegram": "^1.6.0",
-    "uuid": "^9.0.0"
+    "uuid": "^11.0.0"
   }
 }
